@@ -96,7 +96,7 @@ namespace MSQL_Login_Form
             // aktif kullanilan sayisi için
             string sqlkomut = "SELECT count(HURDA) FROM demirbasGirisListe WHERE HURDA in ('0') ";
             SqlCommand cmdKullanilanSayisi = new SqlCommand(sqlkomut, veriTabani.baglanti);
-            int aktifKullanilanSayisi = Convert.ToInt32(cmdHurdaSayisi.ExecuteScalar());
+            int aktifKullanilanSayisi = Convert.ToInt32(cmdKullanilanSayisi.ExecuteScalar());
             lbl_AktifKullanilan.Text = Convert.ToString(aktifKullanilanSayisi);
 
             veriTabani.baglanti.Close();
