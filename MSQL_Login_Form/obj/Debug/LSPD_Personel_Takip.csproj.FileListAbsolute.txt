@@ -1,0 +1,17 @@
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\LSPD_Personel_Takip.csproj.AssemblyReference.cache
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.Hesap.resources
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.Katagoriler.resources
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.Rapor.resources
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.Anasayfa.resources
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.Giris.resources
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.Properties.Resources.resources
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\LSPD_Personel_Takip.csproj.GenerateResource.cache
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\LSPD_Personel_Takip.csproj.CoreCompileInputs.cache
+C:\Users\zamaz\Desktop\MSQL_Login_Form\bin\Debug\MSQL_Login_Form.exe.config
+C:\Users\zamaz\Desktop\MSQL_Login_Form\bin\Debug\MSQL_Login_Form.exe
+C:\Users\zamaz\Desktop\MSQL_Login_Form\bin\Debug\MSQL_Login_Form.pdb
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.exe
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.pdb
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.ZimmetGiris.resources
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.HesapEkle.resources
+C:\Users\zamaz\Desktop\MSQL_Login_Form\obj\Debug\MSQL_Login_Form.ZimmetDevir.resources
