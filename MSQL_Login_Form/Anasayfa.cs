@@ -88,13 +88,13 @@ namespace MSQL_Login_Form
             lbl_DemirbasToplam.Text = Convert.ToString(stunSayisi);
 
             // hurda sayisi için
-            string sqlkomutHurdaSayisi = "SELECT count(HURDA) FROM demirbasGirisListe WHERE HURDA in ('0') ";
+            string sqlkomutHurdaSayisi = "SELECT count(HURDA) FROM demirbasGirisListe WHERE HURDA in ('1') ";
             SqlCommand cmdHurdaSayisi = new SqlCommand(sqlkomutHurdaSayisi, veriTabani.baglanti);
             int hurdaStunSayisi = Convert.ToInt32(cmdHurdaSayisi.ExecuteScalar());
             lbl_HurdaToplam.Text = Convert.ToString(hurdaStunSayisi);
 
-            // kullanilan sayisi için
-            string sqlkomut = "SELECT count(HURDA) FROM demirbasGirisListe WHERE HURDA in ('1') ";
+            // aktif kullanilan sayisi için
+            string sqlkomut = "SELECT count(HURDA) FROM demirbasGirisListe WHERE HURDA in ('0') ";
             SqlCommand cmdKullanilanSayisi = new SqlCommand(sqlkomut, veriTabani.baglanti);
             int aktifKullanilanSayisi = Convert.ToInt32(cmdHurdaSayisi.ExecuteScalar());
             lbl_AktifKullanilan.Text = Convert.ToString(aktifKullanilanSayisi);
