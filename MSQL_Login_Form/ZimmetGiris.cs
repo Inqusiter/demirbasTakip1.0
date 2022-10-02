@@ -259,38 +259,7 @@ namespace MSQL_Login_Form
 
         private void ZimmetGiris_Load(object sender, EventArgs e)
         {
-
-            try
-            {
-                veriTabani.baglanti.Open();
-
-                //SQL baglandık datayı tek tek atadık
-                SqlDataAdapter katagoriler = new SqlDataAdapter("SELECT KATAGORI FROM katagoriler", veriTabani.baglanti);
-                SqlDataAdapter birimler = new SqlDataAdapter("SELECT BIRIM FROM birimler", veriTabani.baglanti);
-
-                DataTable KatagorilerData = new DataTable();
-                DataTable BirimlerData = new DataTable();
-
-                katagoriler.Fill(KatagorilerData);
-                for (int i = 0; i < KatagorilerData.Rows.Count; i++)
-                {
-                    cmBox_AnaKatagori.Items.Add(KatagorilerData.Rows[i]["KATAGORI"].ToString());
-                }
-
-                birimler.Fill(BirimlerData);
-                for (int i = 0; i < BirimlerData.Rows.Count; i++)
-                {
-                    Cmbox_Birimler.Items.Add(BirimlerData.Rows[i]["BIRIM"].ToString());
-                }
-
-                veriTabani.baglanti.Close();
-
-            }
-            catch
-            {
-                MessageBox.Show("Demirbaş giriş load event'i sql hatası gerçekleşti yöneticiye ulaşın!");
-            }
-
+            Verileri_Getir();
         }
         private void txt_DemirbasAra_TextChanged(object sender, EventArgs e)
         {
