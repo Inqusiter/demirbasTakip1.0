@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MSQL_Login_Form
 {
@@ -17,45 +16,14 @@ namespace MSQL_Login_Form
 
         public void htmlDosyaOlustur()
         {
-            //string DosyaYolu = @"C:\Users\zamaz\Documents\test\index.html";
-            //exe konumu aldık \\ split ederek dizi elemanlarına atadık kullanıcı bilgilerini edindik ve dosya konumu belirledik.
-            int raporSayac = 1;
-            string raporAd = "Rapor";
-            string exeKonumu = Path.GetDirectoryName(Application.ExecutablePath);
-            string[] parcaliDosyaYolu = exeKonumu.Split('\\');
-            string diskAdi = parcaliDosyaYolu[0];
-            string kullanicilar = parcaliDosyaYolu[1];
-            string kullaniciadi = parcaliDosyaYolu[2];
-            string dosyaYolu = diskAdi + "/" + kullanicilar + "/" + kullaniciadi + "/Documents" + "/Demirbas/" + raporAd + ".html";
-            string cssDosaYolu = diskAdi + "/" + kullanicilar + "/" + kullaniciadi + "/Documents" + "/Demirbas";
-
-            if (File.Exists(dosyaYolu) == false)
+            string DosyaYolu = @"C:\Users\zamaz\Desktop\test\index.html";
+            if (File.Exists(DosyaYolu))
             {
-                Directory.CreateDirectory(cssDosaYolu);
+                File.Delete(DosyaYolu);
             }
-
-
-            if (File.Exists(dosyaYolu) == true)
+            else
             {
-                DialogResult raporSilme = new DialogResult();
-                raporSilme = MessageBox.Show("Rapor+1 diye kayıt oluşturulsun mu? Hayır tıklarsanız eski raporu silip üzerine yazacağız.", "Evet", MessageBoxButtons.YesNo);
-                if (raporSilme == DialogResult.Yes)
-                {
-                    raporSayac++;
-                    raporAd = "Rapor" + Convert.ToString(raporSayac) ;
-                    dosyaYolu = diskAdi + "/" + kullanicilar + "/" + kullaniciadi + "/Documents" + "/Demirbas/" + raporAd + ".html";
-                    MessageBox.Show(raporAd + "olarak kaydettik çünkü aynı dosya var!");
-                    //File.Delete(dosyaYolu);
-                    //MessageBox.Show("Eski dosya silindi");
-                    //raporAd += raporAd + System.DateTime.Today.ToString();
-                    //dosyaYolu = diskAdi + "/" + kullanicilar + "/" + kullaniciadi + "/Documents" + "/Demirbas/" + raporAd + ".html";
-                }
-                File.Delete(dosyaYolu);
-
-            }
-
-
-            veriTabani.baglanti.Open();
+                veriTabani.baglanti.Open();
 
                 SqlDataAdapter demirbas_listele = new SqlDataAdapter
                     ("select URUN AS[Ürün], URUNID, SERINO AS[Ürün Seri], MARKA AS[Marka], TARIH AS[Tarih], SORUMLU AS[Zimmetli Kişi]," +
@@ -66,14 +34,11 @@ namespace MSQL_Login_Form
 
                 veriTabani.baglanti.Close();
 
-            // string ifade içinde " kullanmak için ters slah kullanılır.
-            // \" stringi bypass eder
-            StreamWriter Yaz = new StreamWriter(dosyaYolu);
+                // string ifade içinde " kullanmak için ters slah kullanılır.
+                StreamWriter Yaz = new StreamWriter(@"C:\Users\zamaz\Desktop\test\index.html");
                 Yaz.Write("<html>" +
-            "<head>" +                                   
-                    "<link href=\""+ cssDosaYolu + "/css/bootstrap.css\" "  +  "rel= \"stylesheet\"/>" +
-                    // title attık çünkü çıktı alınınca ismini üste yazsın
-                    " <title>Demirbaş Rapor</title>" +
+            "<head>" +
+                    "<link href=\"css/bootstrap.css\" rel=\"stylesheet\"/>" +
             "</head>" +
                     "<body style=\"padding: 20px; \">" +
              "<div class=\"card-body\">" +
@@ -113,7 +78,7 @@ namespace MSQL_Login_Form
              "</div>" +
                     "</html>");
                 Yaz.Close();
-                MessageBox.Show("Rapor Çıktı Alındı");
+            }
         }
     }
 }
