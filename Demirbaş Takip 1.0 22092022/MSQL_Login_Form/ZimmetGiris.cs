@@ -271,8 +271,30 @@ namespace MSQL_Login_Form
 
         private void ZimmetGiris_Load(object sender, EventArgs e)
         {
-            Verileri_Getir()
+
+            try
+            {
+                veriTabani.baglanti.Open();
+
+                //SQL baglandık datayı tek tek atadık
+                SqlDataAdapter katagoriler = new SqlDataAdapter("SELECT KATAGORI FROM katagoriler", veriTabani.baglanti);
+                DataTable KatagorilerData = new DataTable();
+                katagoriler.Fill(KatagorilerData);
+                for (int i = 0; i < KatagorilerData.Rows.Count; i++)
+                {
+                    cmBox_AnaKatagori.Items.Add(KatagorilerData.Rows[i]["KATAGORI"].ToString());
+                }
+
+                veriTabani.baglanti.Close();
+
+            }
+            catch (global::System.Exception)
+            {
+                MessageBox.Show("error");
+            }
+
         }
-        
+
+
     }
 }
